@@ -2,14 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Footer } from './components/Footer';
-import { Ruleta } from './components/Ruleta';
-import { Album } from './components/Album';
+import { Ruleta } from './components/rulet/Ruleta';
+import { Admin } from './components/admin/Admin';
+import Album  from './components/album/Album';
 
-import './App.css';
-
-
-
-//perfil, album, y billetera no es un action, solo es para pruebas, el resto lo maneja el router del backend no del frontend
 function App() {
   return (
     <>
@@ -31,12 +27,8 @@ function App() {
             </div>
           } />
           <Route path="/ruleta" element={<Ruleta />} />
-          <Route path="/login" element={
-            <div className="container py-5">
-              <h2 className="text-center mb-5">🔑 Login</h2>
-              <p className="lead text-center">Inicia sesión para acceder a tu perfil</p>
-            </div>
-          } />
+          <Route path="/login" element={<Admin/>} />
+          <Route path="/album" element={<Album/>} />
           <Route path="/register" element={
             <div className="container py-5">
               <h2 className="text-center mb-5">📝 Register</h2>
@@ -51,7 +43,7 @@ function App() {
               </p>
             </div>
           } />
-           <Route path="/album" element={<Album />} />
+          
         </Routes>
         
       </main>

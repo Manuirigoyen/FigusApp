@@ -20,7 +20,7 @@ h1.main-title {
 }
 
 .team {
-  background: rgba(255, 255, 255, 0.9); 
+  background: rgba(255, 255, 255, 0.6); 
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -127,9 +127,9 @@ h1.main-title {
   height: 20px;
   width: 0%; /* El ancho lo controla React con style={{ width: `${porcentaje}%` }} */
   background: #e53935; /* El color lo controla React con style={{ backgroundColor: progressBarColor }} */
- /* transition:
+  transition:
     width 0.4s ease,
-    background 0.3s ease;*/
+    background 0.3s ease;
 }
 
 /* Texto dentro de la barra de progreso */
@@ -150,8 +150,8 @@ h1.main-title {
   width: 100%;
   height: auto;
   margin-top: 30px;
- /* background-image: url(/public/assets/img/fonts/pelotapremio.png); /* Asegúrate de que la ruta sea correcta */
-  background-size: cover; 
+  background-image: url(/public/assets/img/fonts/pelotapremio.png); /* Asegúrate de que la ruta sea correcta */
+  background-size: cover;
   background-position: center;
   padding: 40px 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

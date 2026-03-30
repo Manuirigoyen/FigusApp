@@ -1,3 +1,4 @@
+import './ruleta.css';
 
 export const Ruleta = () => {
   return (
@@ -65,42 +66,12 @@ const getDivAnuncio = (imgPath: string, link: string) => (
   </div>
 );
 
-const getDivBotonGirar = () => {
-  return (
-    <>
-      <div className="text-center mt-3 botonPrincipal">
-        <button className="btn btn-warning" id="girarBtn">Girar (0)</button>
-      </div>
-
-      <div id="sinGiros" className="text-center mt-2">
-        <button
-          id="btn-tienda"
-          className="text-decoration-none text-dark btn-reset"
-        >
-          ¿Te quedaste sin giros?
-        </button>
-      </div></>
-  );
-}
-
-const getDivBotonesEspeciales = () => {
-  return (<>
-    <div className="d-flex flex-column align-items-stretch">
-      <div>
-        <button className="btn btn-custom w-50 mt-2" id="girar5">5 Giros</button>
-        <button className="btn btn-custom w-50 mt-2" id="girar10">10 Giros</button>
-      </div>
-      <div>
-        <button className="btn btn-custom w-50 mt-2" id="girar15">15 Giros</button>
-        <button className="btn btn-dark-custom w-50 mt-2" id="autoGiro">
-          Automático
-        </button>
-      </div>
-    </div>
-  </>);
-}
-
-
+/**
+ * Renderiza el componente de la ruleta de premios.
+ * Genera una interfaz visual con ruleta giratoria, premios y texto promocional.
+ *
+ * @returns {JSX.Element} Elemento JSX que representa la ruleta de premios completa.
+ */
 const getDivPremios = () => {
   return (<>
     <div className="container-fluid text-center">
@@ -118,11 +89,13 @@ const getDivPremios = () => {
               alt="Base de Ruleta"
             />
 
+
             <img
               src="../../assets/img/icons/triangulo_ruleta.png"
               className="triangulo-ruleta"
               alt="Triangulo de Ruleta"
             />
+
 
             <div
               className="premios-circle-wrapper position-absolute top-50 start-50 translate-middle"
@@ -145,9 +118,54 @@ const getDivPremios = () => {
           </div>
         </div>
       </div>
-      <h3>
-        Desde figuritas hasta sobres especiales... ¡cada giro puede sorprenderte!
-      </h3>
     </div>
   </>);
 }
+
+/**
+ * Renderiza el panel de botones especiales para giros automáticos.
+ * Contiene botones para 5, 10, 15 giros y modo automático en un layout de dos filas.
+ *
+ * @returns {JSX.Element} Elemento JSX con botones de control de giros.
+ */
+const getDivBotonesEspeciales = () => {
+  return (<>
+    <div className="d-flex flex-column align-items-stretch mt-5">
+      <div className="d-flex justify-content-center mb-3">
+        <button className="btn btn-custom me-2" id="girar5">5 Giros</button>
+        <button className="btn btn-custom" id="girar10">10 Giros</button>
+      </div>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-custom me-2" id="girar15">15 Giros</button>
+        <button className="btn btn-dark-custom" id="autoGiro">Automático</button>
+      </div>
+    </div>
+  </>);
+}
+
+/**
+ * Renderiza el botón principal de girar y enlace de tienda para sin giros.
+ * Muestra contador de giros restantes y botón alternativo cuando no hay giros.
+ *
+ * @returns {JSX.Element} Elemento JSX con controles principales de ruleta.
+ */
+const getDivBotonGirar = () => {
+  return (
+    <>
+      <div className="text-center botonPrincipal">
+        <button className="btn btn-warning" id="girarBtn">Girar (0)</button>
+      </div>
+
+      <div id="sinGiros" className="text-center">
+        <button
+          id="btn-tienda"
+          className="text-decoration-none text-dark btn-reset"
+        >
+          ¿Te quedaste sin giros?
+        </button>
+      </div>
+    </>
+  );
+}
+
+
