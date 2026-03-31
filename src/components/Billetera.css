@@ -1,64 +1,49 @@
-.billetera-section { 
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 50px;
+@import "variables.css";
+
+.billetera-section {
+  background-color: var(--color-bg-grey-light);
+  padding: var(--spacing-3xl);
   margin: auto;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
   max-width: 1050px;
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-family);
   text-align: center;
 }
+
 .billetera-section h2 {
   text-align: center;
   font-size: 34px;
-  color: #392603;
-  margin-bottom: 20px;
+  color: var(--color-secondary-brown);
+  margin-bottom: var(--spacing-lg);
   font-weight: bold;
 }
 
 .billetera-section h3 {
   text-align: center;
   font-size: 30px;
-  color: #392603;
-  margin-bottom: 20px;
+  color: var(--color-secondary-brown);
+  margin-bottom: var(--spacing-lg);
   font-weight: 700;
 }
 
-.empty-billetera{
+.empty-billetera {
   text-align: center;
-}
-
-@media (max-width: 630px) {
- .billetera-section h2 {
-    font-size: 30px;
-  }
- .billetera-section h3 {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 460px) {
- .billetera-section h2 {
-    font-size: 22px;
-  }
- .billetera-section h3 {
-    font-size: 15px;
-  }
 }
 
 .figus-repetidas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; 
+  gap: var(--spacing-lg);
 }
 
 .billetera-item-wrapper {
-  position: relative; 
-  width: 80px; 
-  height: 100px; 
-  margin: 10px; 
+  position: relative;
+  width: 80px;
+  height: 100px;
+  margin: 10px;
 }
 
 .billetera-item-wrapper::after {
@@ -74,46 +59,73 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 1; 
+  z-index: 1;
   pointer-events: none;
 }
 
-.billetera-item-wrapper.contador {
+.contador {
   position: absolute;
   top: 4px;
   right: 4px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--color-bg-black-semi);
   color: #fff;
   font-size: 14px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  z-index: 4; 
+  padding: var(--spacing-xs) 6px;
+  border-radius: var(--radius-sm);
+  z-index: 4;
 }
 
-.billetera-item-wrapper.botones-billetera {
+.botones-billetera {
   position: absolute;
   bottom: 4px;
   left: 4px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  z-index: 4; 
+  gap: var(--spacing-xs);
+  z-index: 4;
 }
 
-.billetera-item-wrapper.btn-eliminar,
-.billetera-item-wrapper.btn-intercambiar {
+.btn-eliminar,
+.btn-intercambiar {
   font-size: 10px;
-  padding: 2px 6px;
+  padding: var(--spacing-xs) 6px;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   color: #fff;
+  transition: opacity var(--transition-fast);
 }
 
-.billetera-item-wrapper.btn-eliminar {
-  background-color: #d32f2f;
+.btn-eliminar {
+  background-color: var(--color-danger-dark-red);
 }
 
-.billetera-item-wrapper.btn-intercambiar {
-  background-color: #1976d2;
+.btn-eliminar:hover {
+  opacity: 0.85;
+}
+
+.btn-intercambiar {
+  background-color: var(--color-info-blue);
+}
+
+.btn-intercambiar:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 630px) {
+  .billetera-section h2 {
+    font-size: 30px;
+  }
+  .billetera-section h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .billetera-section h2 {
+    font-size: 22px;
+  }
+  .billetera-section h3 {
+    font-size: 15px;
+  }
 }

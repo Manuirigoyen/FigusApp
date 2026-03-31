@@ -1,13 +1,15 @@
+@import "variables.css";
+
 h1.main-title {
   padding: 10px;
-  font-family: "Quicksand", sans-serif !important;
-  color: #ffd600;
+  font-family: var(--font-family);
+  color: var(--color-primary-gold);
   text-shadow: 4px 4px 0 #000;
   letter-spacing: 1px;
   margin-bottom: 30px;
   text-transform: uppercase;
   font-weight: bold;
-  text-align: center; 
+  text-align: center;
 }
 
 .album {
@@ -15,37 +17,37 @@ h1.main-title {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  margin-top: 20px; 
-  padding-bottom: 50px; 
+  margin-top: 20px;
+  padding-bottom: 50px;
 }
 
 .team {
-  background: rgba(255, 255, 255, 0.6); 
+  background: var(--color-bg-white-translucent);
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   width: 100%;
   max-width: 1050px;
   box-sizing: border-box;
 }
 
 .titulo-seleccion {
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-family);
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #34495e; 
-  border-bottom: 2px solid #ccc;
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--border-color-grey);
   padding-bottom: 10px;
 }
 
 .icono-bandera {
   width: 32px;
   height: 20px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -77,33 +79,30 @@ h1.main-title {
   width: 300px;
   height: 450px;
   filter: grayscale(100%);
-  transition: filter 0.5s;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  transition: filter var(--transition-slow);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
 }
 
-/* Clase 'color' para la bandera grande cuando el equipo está completo */
 .bandera.color {
   filter: grayscale(0%);
 }
 
-/* Párrafo de descripción del equipo */
 .descripcion {
   width: 210px;
-  height: 320px; /* Tu altura original, cuidado con el overflow */
+  height: 320px;
   position: absolute;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--color-bg-white-light);
   font-weight: bold;
-  padding: 12px 16px;
-  border-radius: 8px;
+  padding: var(--spacing-md) calc(var(--spacing-md) + 4px);
+  border-radius: var(--radius-lg);
   font-size: 11.5px;
-  font-family: "Quicksand", sans-serif;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family);
+  box-shadow: var(--shadow-lg);
   text-align: center;
 }
 
-/* Contenedor de las figuritas individuales (grid) */
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -111,30 +110,25 @@ h1.main-title {
   row-gap: 22px;
 }
 
-/* Contenedor de la barra de progreso */
 .progress-container {
-  width: 95%; /* Tu ancho original */
+  width: 95%;
   background: #ddd;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
   margin-bottom: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
-/* Barra de progreso */
 .progress-bar {
   height: 20px;
-  width: 0%; /* El ancho lo controla React con style={{ width: `${porcentaje}%` }} */
-  background: #e53935; /* El color lo controla React con style={{ backgroundColor: progressBarColor }} */
-  transition:
-    width 0.4s ease,
-    background 0.3s ease;
+  width: 0%;
+  background: var(--color-error-red);
+  transition: width var(--transition-normal), background var(--transition-fast);
 }
 
-/* Texto dentro de la barra de progreso */
 .progress-text {
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-family);
   position: absolute;
   top: 0;
   left: 50%;
@@ -144,64 +138,49 @@ h1.main-title {
   font-size: 12px;
 }
 
-/* --- Promo Final (sección de mensajes de victoria/incompleto) --- */
+/* Promo Final */
 .promo-final {
   position: relative;
   width: 100%;
   height: auto;
   margin-top: 30px;
-  background-image: url(/public/assets/img/fonts/pelotapremio.png); /* Asegúrate de que la ruta sea correcta */
+  background-image: url(/public/assets/img/fonts/pelotapremio.png);
   background-size: cover;
   background-position: center;
   padding: 40px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
   text-align: center;
   overflow: hidden;
 }
-.promo-final h4 {
-  font-family: "Quicksand", sans-serif;
-  margin-bottom: 2px;
-  font-size: 38px;
+
+.promo-final h4,
+.promo-final h3,
+.promo-final h2 {
+  font-family: var(--font-family);
   color: #fff;
-  text-shadow:
-    3px 3px 2px #636363,
-    -3px 3px 2px #636363,
-    -3px -3px 0 #636363,
-    3px -3px 0 #636363;
+  text-shadow: 3px 3px 2px #636363, -3px 3px 2px #636363, -3px -3px 0 #636363, 3px -3px 0 #636363;
   position: relative;
   z-index: 2;
 }
+
+.promo-final h4 {
+  margin-bottom: 2px;
+  font-size: 38px;
+}
+
 .promo-final h3 {
-  font-family: "Quicksand", sans-serif;
   margin-top: 20px;
   font-size: 42px;
-  color: #fff;
-  text-shadow:
-    3px 3px 2px #636363,
-    -3px 3px 2px #636363,
-    -3px -3px 0 #636363,
-    3px -3px 0 #636363;
-  position: relative;
-  z-index: 2;
 }
 
 .promo-final h2 {
-  font-family: "Quicksand", sans-serif;
   margin-top: 50px;
   font-size: 60px;
-  color: #fff;
-  text-shadow:
-    3px 3px 2px #636363,
-    -3px 3px 2px #636363,
-    -3px -3px 0 #636363,
-    3px -3px 0 #636363;
-  position: relative;
-  z-index: 2;
 }
 
 .promo-final p {
-  font-family: "Quicksand", sans-serif;
-  margin-top: 260px; /* Este margen es muy grande, revisa si necesitas ajustarlo */
+  font-family: var(--font-family);
+  margin-top: 260px;
   font-size: 24px;
   color: black;
   font-weight: bold;
@@ -209,7 +188,6 @@ h1.main-title {
   z-index: 2;
 }
 
-/* Botón de viaje */
 .boton-viaje {
   position: absolute;
   margin-top: 3px;
@@ -218,18 +196,18 @@ h1.main-title {
   transform: translate(-50%, -50%);
   width: 450px;
   height: 450px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background-color: rgba(128, 128, 128, 0.4);
   color: #fff;
   text-shadow: 3px 3px 2px black;
   font-size: 28px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-lg);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s;
+  transition: background-color var(--transition-fast);
   z-index: 1;
 }
 
@@ -237,7 +215,6 @@ h1.main-title {
   background-color: transparent;
 }
 
-/* SVG Curvo */
 .svg-curvo {
   width: 400px;
   height: 300px;
@@ -250,54 +227,7 @@ h1.main-title {
   stroke: none;
 }
 
-/* --- Sección de la Billetera --- */
-.billetera-section {
-  margin-top: 50px;
-  padding: 25px;
-  border: 1px dashed #a0a0a0;
-  border-radius: 12px;
-  background-color: #fffaf0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.billetera-section h2 {
-  color: #d35400;
-  border-bottom-color: #f39c12;
-  font-family: "Quicksand", sans-serif; /* Aplica la fuente que usas */
-  text-align: left; /* Asegura que esté a la izquierda */
-  margin-top: 0; /* Reinicia margen */
-}
-
-.billetera-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
-  padding-top: 10px;
-}
-
-.billetera-item {
-  border: 1px solid #fbdcb8;
-  padding: 12px;
-  border-radius: 8px;
-  background-color: #fff3e0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95em;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.billetera-img {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  border: 1px solid #f9d8b6;
-  border-radius: 4px;
-}
-
-.empty-billetera {
-  text-align: center;
-  color: #7f8c8d;
+.mensaje {
   font-style: italic;
   padding: 10px;
   grid-column: 1 / -1;

@@ -6,21 +6,21 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { STORAGE_KEYS } from './constants/storageKeys';
 
-import { BrowserRouter } from 'react-router-dom'; 
-
-
+// Limpiar localStorage al cargar la aplicación
+localStorage.removeItem(STORAGE_KEYS.FIGURITAS_COMPLETAS);
+localStorage.removeItem(STORAGE_KEYS.BILLETERA);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter> 
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter> 
+    <App />
+  </BrowserRouter>
 );
 
 reportWebVitals();

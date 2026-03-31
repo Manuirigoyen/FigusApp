@@ -1,50 +1,31 @@
 // src/components/Billetera.tsx
-import React, { useState, useEffect } from 'react';
-import './Billetera.css'; // Importa el CSS de la billetera
-import { ALL_FIGURITAS, Figurita } from '../data/figuritasData'; // <-- Importamos ALL_FIGURITAS y Figurita
-import FiguritaCard from './FiguritaCard'; // <-- Importamos FiguritaCard
+// Componente que muestra las figuritas repetidas del usuario
 
-// Define la interfaz para una figurita en la billetera
-interface BilleteraItemData {
-  count: number;
-  // Ya no necesitamos 'img' aquí, la imagen vendrá de FiguritaCard
-  // img: string;
-}
+import React from 'react';
+import './Billetera.css';
+import { ALL_FIGURITAS, Figurita } from '../data/figuritasData';
+import FiguritaCard from './FiguritaCard';
+import { Billetera as BilleteraType } from '../types';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import { STORAGE_KEYS } from '../constants/storageKeys';
 
-// Define la interfaz para el objeto de la billetera (mapa de ID a BilleteraItemData)
-interface BilleteraState {
-  [figuritaId: string]: BilleteraItemData;
-}
-
-// Props que recibirá el componente Billetera
-interface BilleteraProps {
-  // Ya no necesitamos pasar 'figuritas' como prop, porque ALL_FIGURITAS ya está importado
-  // figuritas: FiguritaOriginal[];
-}
-
-const Billetera: React.FC<BilleteraProps> = () => { // Ya no recibe 'figuritas' como prop
-  const [billetera, setBilletera] = useState<BilleteraState>({});
-
-  // Cargar la billetera desde localStorage al inicio
-  useEffect(() => {
-    try {
-      const storedBilleteraStr = localStorage.getItem('billetera');
-      if (storedBilleteraStr) {
-        setBilletera(JSON.parse(storedBilleteraStr));
-      }
-    } catch (error) {
-      console.error("Error al cargar la billetera de localStorage:", error);
-    }
-  }, []);
-
-  // Guardar la billetera en localStorage cada vez que cambie
-  useEffect(() => {
-    localStorage.setItem('billetera', JSON.stringify(billetera));
-  }, [billetera]);
+/**
+ * Componente Billetera - Muestra las figuritas repetidas que el usuario puede intercambiar
+ *
+ * Funcionalidades:
+ * - Muestra todas las figuritas que el usuario tiene repetidas
+ * - Permite eliminar figuritas de la billetera (una por vez)
+ * - Muestra contador de cada tipo de figurita
+ * - Guarda estado en localStorage
+ *
+ * @returns Componente React con la billetera de figuritas repetidas
+ */
+const Billetera: React.FC = () => {
+  const [billetera, setBilletera] = useLocalStorage<BilleteraType>(STORAGE_KEYS.BILLETERA, {});
 
   const handleEliminarFigurita = (figuritaId: string) => {
     setBilletera(prevBilletera => {
-      const newBilletera = {...prevBilletera };
+      const newBilletera = { ...prevBilletera };
       if (newBilletera[figuritaId]) {
         if (newBilletera[figuritaId].count > 1) {
           newBilletera[figuritaId].count--;
@@ -56,38 +37,35 @@ const Billetera: React.FC<BilleteraProps> = () => { // Ya no recibe 'figuritas' 
     });
   };
 
-  // Eliminamos getFiguritaImageInfo porque FiguritaCard manejará la lógica de la imagen
-  // const getFiguritaImageInfo = (...) => {... };
-
   return (
     <section className="billetera-section">
       <h2>Mi Billetera de Figuritas Repetidas</h2>
       <h3>¡Intercambialas con amigos!</h3>
       <div className="figus-repetidas" id="billetera-contenedor">
-        {Object.entries(billetera).length === 0? (
+        {Object.entries(billetera).length === 0 ? (
           <p className="empty-billetera">Tu billetera está vacía. ¡Consigue más figuritas para repetir!</p>
         ) : (
           Object.entries(billetera).map(([figuritaId, item]) => {
-            // Buscamos la figurita completa en ALL_FIGURITAS
             const originalFigurita = ALL_FIGURITAS.find(f => f.id === figuritaId);
 
             if (!originalFigurita) {
               console.warn(`Figurita con ID ${figuritaId} encontrada en billetera pero no en ALL_FIGURITAS.`);
-              return null; // Ocultar si no se encuentra la figurita original
+              return null;
             }
 
-            // Creamos una copia de la figurita original y le seteamos isComplete a true
-            // para que se muestre como "completa" en la billetera
             const figuritaParaBilletera: Figurita = {
-             ...originalFigurita,
-              isComplete: true, // Siempre mostrar como "completa" en la billetera
+              ...originalFigurita,
+              isComplete: true,
             };
 
             return (
-              <div key={figuritaId} className="billetera-item-wrapper"> {/* Nuevo contenedor para cada item */}
+              <div key={figuritaId} className="billetera-item-wrapper">
                 <FiguritaCard
-                  figurita={figuritaParaBilletera} // Le pasamos la figurita adaptada
-                  onFiguritaClick={() => { /* No hacer nada al clickear en la billetera */ }}
+                  figurita={figuritaParaBilletera}
+                  onFiguritaClick={() => {
+                    // No hacer nada al clickear en la billetera
+                  }}
+                  clickable={false}
                 />
                 <div className="contador">x{item.count}</div>
                 <div className="botones-billetera">

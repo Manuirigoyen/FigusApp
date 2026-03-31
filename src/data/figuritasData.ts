@@ -1,19 +1,35 @@
 // src/data/figuritasData.ts
+// Datos de todas las figuritas disponibles en el álbum
 
-// 1. Interfaz Figurita unificada (la misma que tienes en Album.tsx y FiguritaCard.tsx)
+/**
+ * Interfaz que define la estructura de una figurita
+ */
 export interface Figurita {
+  /** Identificador único de la figurita */
   id: string;
+  /** ID del equipo al que pertenece (argentina, brasil, francia) */
   teamId: string;
+  /** Si es una figurita especial (con imagen oculta) */
   isSpecial: boolean;
+  /** Si el usuario ya la ha completado */
   isComplete: boolean;
+  /** URL de la imagen normal de la figurita */
   backgroundImageUrl: string;
+  /** URL de la imagen de portada (para figuritas especiales no completadas) */
   coverImageUrl?: string;
+  /** URL de la imagen especial (cuando está completada) */
   specialImageUrl?: string;
+  /** Texto alternativo para la imagen especial */
   specialImageAlt?: string;
+  /** Datos del jugador (para figuritas especiales) */
   dataJugador?: string;
 }
 
-// 2. Datos ALL_FIGURITAS (tu initialFiguritasData de Album.tsx)
+/**
+ * Conjunto completo de figuritas disponibles en el álbum
+ * Incluye figuritas normales y especiales de Argentina, Brasil y Francia
+ * Cada figurita tiene información completa para renderizarse correctamente
+ */
 export const ALL_FIGURITAS: Figurita[] = [
   // Argentina
   { id: 'figu01', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/fonts/Argentina/1.jpg' },
