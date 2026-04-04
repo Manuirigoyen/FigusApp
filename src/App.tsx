@@ -1,10 +1,11 @@
-// src/App.tsx
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { Footer } from './components/Footer';
-import Album from './components/Album';      
-import Billetera from './components/Billetera';
+import { Ruleta } from './components/rulet/Ruleta';
+import { Admin } from './components/admin/Admin';
+import Album  from './components/album/Album';
+import Billetera from './components/billetera/Billetera';
 
 function App() {
   return (
@@ -20,40 +21,22 @@ function App() {
               <p className="lead text-center">Próximamente: Figuritas disponibles</p>
             </div>
           } />
-          
           <Route path="/negociaciones" element={
             <div className="container py-5">
-              <h2 className="text-center mb-5">Negociaciones ⚖️</h2>
-              <p className="lead text-center">Acá podes hacer negociaciones que haya disponibles</p>
+              <h2 className="text-center mb-5">⚖️ Negociaciones</h2>
+              <p className="lead text-center">Intercambio de figuritas</p>
             </div>
           } />
-
-          <Route path="/ruleta" element={
+          <Route path="/ruleta" element={<Ruleta />} />
+          <Route path="/login" element={<Admin/>} />
+          <Route path="/album" element={<Album/>} />
+          <Route path="/billetera" element={<Billetera/>} />
+          <Route path="/register" element={
             <div className="container py-5">
-              <h2 className="text-center mb-5">🎡 Ruleta</h2>
-              <p className="lead text-center">Gana premios girando!</p>
+              <h2 className="text-center mb-5">📝 Register</h2>
+              <p className="lead text-center">Regístrate para crear tu cuenta</p>
             </div>
           } />
-          <Route path="/perfil" element={
-            <div className="container py-5 text-center">
-              <h2 className="text-center mb-5">👤 Perfil</h2>
-              <p className="lead text-center mb-4">Tus álbumes y estadísticas</p>
-              
-              {/* Contenedor para los dos botones */}
-              <div className="d-flex justify-content-center gap-4 mt-5">
-                <Link to="/album" className="btn btn-primary btn-lg">
-                  Mi Álbum 📚
-                </Link>
-                <Link to="/billetera" className="btn btn-success btn-lg">
-                  Mi Billetera 💼
-                </Link>
-              </div>
-            </div>
-          } />
-
-          {/* Rutas individuales para Album y Billetera */}
-          <Route path="/album" element={<Album />} />
-          <Route path="/billetera" element={<Billetera />} />
           <Route path="*" element={
             <div className="container py-5 text-center">
               <h2>404 - Página no encontrada</h2>
@@ -62,9 +45,10 @@ function App() {
               </p>
             </div>
           } />
+          
         </Routes>
+        
       </main>
-
       <Footer />
     </>
   );
