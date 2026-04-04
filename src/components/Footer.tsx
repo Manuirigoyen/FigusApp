@@ -110,48 +110,50 @@ const getDivContacto = () => (
  * @returns Formulario de contacto.
  */
 const getFormConsultas = () => (
-  <div className="d-flex justify-content-center">
-    <form className="w-100" aria-labelledby="consultas-title">
-      <h6 id="consultas-title" className="fw-bold text-center mb-3">Consultas</h6>
+  <form
+    className="w-100 text-center"
+    aria-labelledby="consultas-title"
+  >
+    <h6 id="consultas-title" className="fw-bold text-center mb-3">
+      Consultas
+    </h6>
 
-      <select className="form-select mb-2" required aria-label="Motivo de la consulta">
-        <option value="">Motivo de la consulta</option>
-        <option value="soporte">Soporte</option>
-        <option value="compras">Problemas con compras</option>
-        <option value="sugerencias">Sugerencias</option>
-      </select>
+    <select className="form-select mb-2 w-100" required aria-label="Motivo de la consulta">
+      <option value="">Motivo de la consulta</option>
+      <option value="soporte">Soporte</option>
+      <option value="compras">Problemas con compras</option>
+      <option value="sugerencias">Sugerencias</option>
+    </select>
 
-      <input
-        type="email"
-        className="form-control mb-2"
-        placeholder="Tu correo"
-        required
-        aria-label="Tu dirección de correo electrónico"
-      />
+    <input
+      type="email"
+      className="form-control mb-2 w-100"
+      placeholder="Tu correo"
+      required
+      aria-label="Tu dirección de correo electrónico"
+    />
 
-      <textarea
-        className="form-control mb-2"
-        rows={3}
-        placeholder="Escribe tu consulta..."
-        required
-        aria-label="Escribe tu consulta aquí"
-      />
+    <textarea
+      className="form-control mb-2 w-100"
+      rows={3}
+      placeholder="Escribe tu consulta..."
+      required
+      aria-label="Escribe tu consulta aquí"
+    />
 
-      <div
-        className="g-recaptcha mb-3 mx-auto d-block"
-        data-sitekey="Clave"
-        style={{ width: '302px', height: '78px' }}
-      />
+    <div
+      className="g-recaptcha mb-3 mx-auto d-block"
+      data-sitekey="Clave"
+      style={{ width: '302px', height: '78px' }}
+    />
 
-      <button
-        id="btnEnviarConsulta"
-        className="btn btn-light w-100 fw-bold"
-        type="submit"
-      >
-        Enviar
-      </button>
-    </form>
-  </div>
+    <button
+      className="btn btn-light w-100 fw-bold"
+      type="submit"
+    >
+      Enviar
+    </button>
+  </form>
 );
 
 /**
@@ -163,16 +165,16 @@ const getDivLenguages = () => (
     <div><h6 className="fw-bold">Tecnologías utilizadas</h6></div>
     <div className="d-flex gap-3 mt-4 justify-content-end">
       <a href="https://react.dev/reference/react" target="_blank" rel="noopener noreferrer" aria-label="Documentación React">
-        <img src="assets/img/icons/react.png" alt="React" width="32" height="32" />
+        <img src="assets/img/icons/footer/react.png" alt="React" width="32" height="32" />
       </a>
       <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/" target="_blank" rel="noopener noreferrer" aria-label="Documentación Bootstrap">
-        <img src="assets/img/icons/bootstrap.png" alt="CSS3" width="32" height="32" />
+        <img src="assets/img/icons/footer/bootstrap.png" alt="CSS3" width="32" height="32" />
       </a>
       <a href="https://docs.nestjs.com/" target="_blank" rel="noopener noreferrer" aria-label="Documentación Nest JS">
-        <img src="assets/img/icons/nestJS.png" alt="Nest JS" width="32" height="32" />
+        <img src="assets/img/icons/footer/nestJS.png" alt="Nest JS" width="32" height="32" />
       </a>
       <a href="https://docs.cloud.google.com/recaptcha/docs?hl=es-419" target="_blank" rel="noopener noreferrer" aria-label="Documentación google reCaptcha">
-        <img src="assets/img/icons/reCaptcha.png" alt="reCaptcha" width="32" height="32" />
+        <img src="assets/img/icons/footer/reCaptcha.png" alt="reCaptcha" width="32" height="32" />
       </a>
     </div>
     <p className="small mt-4 text-end">© 2025 - Actualidad | FigusApp</p>
@@ -212,16 +214,16 @@ const getMetodosDePago = () => (
   <div className="text-end mt-4">
     <h6 className="fw-bold">Métodos de Pago</h6>
     <div className="row g-0 justify-content-end mt-4">
-      {getPagoItem("https://www.visa.com", "assets/img/icons/visa.jpeg", "Visa")}
-      {getPagoItem("https://www.mastercard.com", "assets/img/icons/master.jpeg", "Mastercard")}
-      {getPagoItem("https://www.pagofacil.com.ar/", "assets/img/icons/pagoFacil.jpeg", "Pago Fácil")}
-      {getPagoItem("https://www.rapipago.com.ar", "assets/img/icons/rapiPago.jpeg", "Rapi Pago")}
+      {getPagoItem("https://www.visa.com", "assets/img/icons/footer/visa.jpeg", "Visa")}
+      {getPagoItem("https://www.mastercard.com", "assets/img/icons/footer/master.jpeg", "Mastercard")}
+      {getPagoItem("https://www.pagofacil.com.ar/", "assets/img/icons/footer/pagoFacil.jpeg", "Pago Fácil")}
+      {getPagoItem("https://www.rapipago.com.ar", "assets/img/icons/footer/rapiPago.jpeg", "Rapi Pago")}
     </div>
     <div className="row g-0 justify-content-end">
-      {getPagoItem("https://www.naranja.com", "assets/img/icons/naranja.jpeg", "Naranja X")}
-      {getPagoItem("https://www.diner.com.ar", "assets/img/icons/diner.jpeg", "Diner")}
-      {getPagoItem("https://www.cenco.com.ar", "assets/img/icons/cenco.jpeg", "Cenco")}
-      {getPagoItem("https://www.america.com.ar", "assets/img/icons/america.jpeg", "America")}
+      {getPagoItem("https://www.naranja.com", "assets/img/icons/footer/naranja.jpeg", "Naranja X")}
+      {getPagoItem("https://www.diner.com.ar", "assets/img/icons/footer/diner.jpeg", "Diner")}
+      {getPagoItem("https://www.cenco.com.ar", "assets/img/icons/footer/cenco.jpeg", "Cenco")}
+      {getPagoItem("https://www.america.com.ar", "assets/img/icons/footer/america.jpeg", "America")}
     </div>
   </div>
 );
