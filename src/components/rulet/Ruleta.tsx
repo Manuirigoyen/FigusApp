@@ -79,19 +79,19 @@ const getDivPremios = () => {
         <div className="position-relative contenedorPrincipal">
           <div className="ruleta-container position-relative">
             <img
-              src="../../assets/img/icons/btn_ruleta.png"
+              src="../../assets/img/icons/ruleta/btn_ruleta.png"
               className="ruleta"
               alt="Fondo de Ruleta"
             />
             <img
-              src="../../assets/img/icons/base_ruleta.png"
+              src="../../assets/img/icons/ruleta/base_ruleta.png"
               className="ruleta-base"
               alt="Base de Ruleta"
             />
 
 
             <img
-              src="../../assets/img/icons/triangulo_ruleta.png"
+              src="../../assets/img/icons/ruleta/triangulo_ruleta.png"
               className="triangulo-ruleta"
               alt="Triangulo de Ruleta"
             />
@@ -101,17 +101,17 @@ const getDivPremios = () => {
               className="premios-circle-wrapper position-absolute top-50 start-50 translate-middle"
             >
               <div className="premios-circle">
-                <img src="../../assets/img/icons/sobreDorado.png" className="premio" />
-                <img src="../../assets/img/icons/premio_nada.png" className="premio" />
-                <img src="../../assets/img/icons/sobreGris.png" className="premio" />
-                <img src="../../assets/img/icons/premio_nada.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/sobreDorado.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/premio_nada.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/sobreGris.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/premio_nada.png" className="premio" />
                 <img
-                  src="../../assets/img/icons/figurita_aleatoria.png"
+                  src="../../assets/img/icons/ruleta/figurita_aleatoria.png"
                   className="premio"
                 />
-                <img src="../../assets/img/icons/premio_nada.png" className="premio" />
-                <img src="../../assets/img/icons/giroGratis.png" className="premio" />
-                <img src="../../assets/img/icons/premio_nada.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/premio_nada.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/giroGratis.png" className="premio" />
+                <img src="../../assets/img/icons/ruleta/premio_nada.png" className="premio" />
               </div>
             </div>
             <div id="premioGanado" className="premio-popup d-none"></div>

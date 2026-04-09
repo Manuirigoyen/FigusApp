@@ -1,21 +1,22 @@
 import './admin.css';
 
+
 /**
  * Componente principal del panel de administración.
  * Renderiza la interfaz completa con sidebar colapsable y área de presentación.
  */
 export const Admin = () => {
   return (
-    <main id="mainContent" className="main-wrapper position-relative">
-      <div className="main-content" />
-      
-      <div className="main-content-content position-relative z-1">
-        {getDivAside()}
+    <main id="mainContent" className="main-wrapper position-relative d-flex">
+      {getDivAside()}
+
+      <div className="position-relative z-1 flex-grow-1">
         {getDivPresentacion()}
       </div>
     </main>
   );
 };
+
 
 /**
  * Renderiza la sidebar de navegación administrativa completa.
@@ -28,15 +29,16 @@ const getDivAside = () => (
     <button id="toggleSidebar" className="sidebar-toggle-btn" aria-label="Abrir menú">
       ⮜
     </button>
-    <aside className="bg-light border-end px-3 py-3 pb-5 sidebar-width">
+    <aside className="bg-white border-end px-3 py-3 pb-5 sidebar-width">
       <div className="profile-wrapper text-center mb-4">
         <div className="img-container">
           <button id="btn-album" className="profile-icon">📓</button>
           <img
-            src="assets/img/icons/fotoPerfilDefault.png"
+            src="assets/img/db/users/fotoPerfilDefault.png"
             alt="Foto de perfil"
             className="rounded-circle mb-2"
           />
+          <button id="btn-billetera" className="profile-icon">💼</button>
         </div>
         <h6>admin@example.com</h6>
         <button className="btn btn-danger btn-sm w-100">Cerrar sesión</button>
@@ -115,6 +117,7 @@ const getDivAside = () => (
     </aside>
   </div>
 );
+
 
 /**
  * Renderiza la sección principal de presentación administrativa.

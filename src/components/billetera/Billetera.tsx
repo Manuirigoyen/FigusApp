@@ -2,7 +2,7 @@
 // Componente que muestra las figuritas repetidas del usuario
 
 import React, { useState, useEffect, useReducer } from 'react';
-import './Billetera.css';
+import './billetera.css';
 import { ALL_FIGURITAS, Figurita } from '../../data/figuritasData';
 import FiguritaCard from '../album/FiguritaCard';
 import { Billetera as BilleteraType } from '../../types';

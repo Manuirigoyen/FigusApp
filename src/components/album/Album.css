@@ -136,19 +136,24 @@ h1.main-title {
   font-size: 12px;
 }
 
-/* Promo Final */
 .promo-final {
   position: relative;
   width: 100%;
-  height: auto;
+  /* Cambiá esta línea */
+  min-height: clamp(480px, 55vh, 550px); /* Bajé un poco el vh para que no sea tan alta */
   margin-top: 30px;
   background-image: url(/public/assets/img/fonts/pelotapremio.png);
-  background-size: cover;
+  /* Cambiá esta línea: 100% de ancho, alto automático */
+  background-size: 100% auto; 
   background-position: center;
-  padding: 40px 20px;
-  box-shadow: var(--shadow-lg);
+  background-repeat: no-repeat;
+  padding: clamp(30px, 8vw, 60px) 0; /* Saqué padding lateral para que llene bien */
   text-align: center;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(4px, 1.5vw, 10px);
 }
 
 .promo-final h4,
@@ -157,72 +162,65 @@ h1.main-title {
   font-family: var(--font-family);
   color: #fff;
   text-shadow: 3px 3px 2px #636363, -3px 3px 2px #636363, -3px -3px 0 #636363, 3px -3px 0 #636363;
-  position: relative;
+  margin: 0;
+  line-height: 1.1;
   z-index: 2;
 }
 
+/* FELICIDADES!! */
 .promo-final h4 {
-  margin-bottom: 2px;
-  font-size: 38px;
+  font-size: clamp(24px, 5vw, 38px); /* 24px mobile -> 38px desktop */
+  order: 1;
 }
 
+/* AQUÍ - el botón */
+.boton-viaje {
+  position: static;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background-color: transparent;
+  color: #fff;
+  text-shadow: 3px 3px 2px #636363, -3px 3px 2px #636363, -3px -3px 0 #636363, 3px -3px 0 #636363;
+  font-size: clamp(20px, 4vw, 32px); /* 20px mobile -> 32px desktop */
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: none;
+  display: block;
+  order: 2;
+  margin: 0;
+  z-index: 2;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.boton-viaje:hover {
+  color: var(--color-primary-gold);
+  transform: scale(1.05);
+}
+
+/* Completaste el álbum! */
 .promo-final h3 {
-  margin-top: 20px;
-  font-size: 42px;
+  margin-bottom: clamp(30px, 8vw, 80px); /* Más espacio */
 }
 
+/* PARA ELEGIR SU VIAJE */
 .promo-final h2 {
-  margin-top: 50px;
-  font-size: 60px;
+  font-size: clamp(28px, 6vw, 60px); /* 28px mobile -> 60px desktop */
+  order: 4;
+  margin-top: clamp(5px, 1vw, 10px);
 }
 
+/* Texto de abajo */
 .promo-final p {
   font-family: var(--font-family);
-  margin-top: 260px;
-  font-size: 24px;
+  margin: clamp(15px, 3vw, 20px) 0 0 0;
+  font-size: clamp(14px, 2.5vw, 24px); /* 14px mobile -> 24px desktop */
   color: black;
   font-weight: bold;
   position: relative;
   z-index: 2;
-}
-
-.boton-viaje {
-  position: absolute;
-  margin-top: 3px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 450px;
-  height: 450px;
-  border-radius: var(--radius-full);
-  background-color: rgba(128, 128, 128, 0.4);
-  color: #fff;
-  text-shadow: 3px 3px 2px black;
-  font-size: 28px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color var(--transition-fast);
-  z-index: 1;
-}
-
-.boton-viaje:hover {
-  background-color: transparent;
-}
-
-.svg-curvo {
-  width: 400px;
-  height: 300px;
-  position: absolute;
-  top: 75%;
-}
-
-.svg-curvo path {
-  fill: transparent;
-  stroke: none;
+  order: 5;
+  max-width: 90%;
 }
 
 .mensaje {
@@ -238,6 +236,7 @@ h1.main-title {
 
 /* --- Media Queries --- */
 
+/* Desktop chico / Laptop */
 @media (max-width: 1199px) and (min-width: 768px) {
   /* La dirección del flex en album-layout ya se maneja en el HTML/JSX de React */
 }
@@ -248,12 +247,20 @@ h1.main-title {
   }
 }
 
+/* Tablet landscape */
 @media (max-width: 1027px) {
   .album-layout {
     gap: 80px;
   }
   .progress-container {
     width: 96%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .promo-final {
+    min-height: clamp(350px, 50vh, 500px);
+    background-size: 100% auto; /* Mantiene el ancho completo */
   }
 }
 
@@ -299,9 +306,10 @@ h1.main-title {
   }
 }
 
-@media (max-width: 769px) { /* Este breakpoint agrupa cambios para tablet y móvil */
+/* Tablet portrait / Mobile grande */
+@media (max-width: 769px) {
   .album-layout {
-    flex-direction: column; /* Apila elementos en móvil */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
   }
@@ -312,9 +320,9 @@ h1.main-title {
   }
 
   .contenedor-band-desc {
-    margin: -76px; /* Para mantener la superposición que tenías */
+    margin: -76px;
     order: 2;
-    transform: rotate(90deg); /* Tu rotación original */
+    transform: rotate(90deg);
   }
 
   .contenedor-band-desc .descripcion {
@@ -322,7 +330,7 @@ h1.main-title {
     width: 124%;
     height: 120px;
     padding: 8px;
-    transform: rotate(270deg); /* Tu rotación original */
+    transform: rotate(270deg);
   }
 
   .bandera {
@@ -333,39 +341,34 @@ h1.main-title {
   .progress-container {
     width: 100%;
   }
-
-  .promo-final h2 {
-    font-size: 40px;
-  }
-  .promo-final h3 {
-    font-size: 25px;
-  }
-  .promo-final h4 {
-    font-size: 24px;
-  }
-  .promo-final p {
-    font-size: 3vw;
-  }
-
-  .boton-viaje { /* Ajustes para el botón en móvil */
-    width: 250px; /* Reducir el tamaño */
-    height: 250px;
-    font-size: 18px;
-  }
-  .svg-curvo { /* Ajustes para el SVG en móvil */
-    width: 100%;
-    height: 200px;
-    top: 85%; /* Ajustar posición */
-  }
 }
 
-@media (max-width: 500px) {
-  .promo-final p {
-    font-size: 16px;
+@media (max-width: 768px) {
+  .promo-final {
+    min-height: 250px;
+    background-size: 110%;
+    gap: 6px;
+  }
+  
+  .promo-final h4,
+  .promo-final h3,
+  .promo-final h2 {
+    text-shadow: 2px 2px 1px #636363, -2px 2px 1px #636363, -2px -2px 0 #636363, 2px -2px 0 #636363;
   }
 }
 
 @media (max-width: 480px) {
+  .promo-final {
+    min-height: 250px;
+    padding: 30px 15px;
+    background-size: 140%;
+  }
+
+  .promo-final p {
+    font-size: 14px;
+    max-width: 95%;
+  }
+
   .bandera {
     margin: 10px;
     width: 130px;
@@ -383,14 +386,25 @@ h1.main-title {
   }
 }
 
+/* Mobile muy chico */
 @media (max-width: 360px) {
+  .promo-final {
+    min-height: 340px;
+    gap: 4px;
+  }
+  
+  .promo-final h4 { font-size: 22px; }
+  .boton-viaje { font-size: 18px; }
+  .promo-final h3 { font-size: 20px; }
+  .promo-final h2 { font-size: 24px; }
+
   .bandera {
     margin: 15px;
     width: 100px;
     height: 200px;
   }
   .descripcion {
-    width: 100px; /* Ajustado para que quepa */
+    width: 100px;
     height: 200px;
     font-size: 4.8px;
   }
@@ -398,4 +412,8 @@ h1.main-title {
     width: 110%;
     height: 80px;
   }
+
+  .promo-final h3 {
+  margin-bottom: clamp(5px, 8vw, 80px); /* Más espacio */
+}
 }

@@ -172,14 +172,6 @@ main button:hover {
   width: 20% !important;
 }
 
-@media (max-width: 576px) {
-  #getDivBotonesEspeciales .btn {
-    min-width: 90px;
-    max-width: 120px;
-    font-size: 13px !important;
-  }
-}
-
 @media (max-width: 360px) {
   .d-flex.flex-column>div {
     display: flex;

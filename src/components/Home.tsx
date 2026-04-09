@@ -25,7 +25,7 @@ export const Home = () => {
 
         {getDivHeader()}
 
-        <div className="container-fluid px-4 mt-2">
+        <div className="container-fluid px-4 mt-3">
           <div className="row g-0 justify-content-center">
             <div className="col-xl-10 col-lg-11 col-md-12 px-0">
               {getDivPresentacion()}
@@ -85,9 +85,8 @@ const getDivPresentacion = () => (
   <div className="video-hero shadow rounded-4 overflow-hidden mx-auto mt-n5 w-75">
     <video
       className="w-100 video-narrow"
-      src="assets/vids/presentacion.mp4"
-      poster="assets/img/fonts/portada.jpeg"
-      autoPlay
+      src="assets/vids/presentacion.mp4"  
+      controls 
       loop
       muted
       playsInline
@@ -100,7 +99,7 @@ const getDivPresentacion = () => (
  * @returns Tres cards con ventajas principales de la aplicación.
  */
 const getDivPublicidad = () => (
-  <section className="beneficios-section text-center py-3 mt-5">
+  <section className="beneficios-section text-center py-3 mt-4">
     <div className="container">
       <h3 className="mb-5 text-white">
         ¿Por qué te conviene FigusApp?
