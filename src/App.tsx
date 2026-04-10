@@ -5,11 +5,11 @@ import { Home } from './components/Home';
 import { Footer } from './components/Footer';
 
 import { Ruleta } from './components/rulet/Ruleta';
-import { Intercambios }  from './components/intercambios/Intercambios'; //manuel
-import { Tienda } from './components/tienda/Tienda'; //martin 
-import { Login }  from './components/login/Login'; //manuel
-import { Register }  from './components/register/Register'; //martin
-import { Err_404 }  from './components/error/Err_404'; //por definir (react por defecto?)
+import { Intercambios }  from './components/intercambios/Intercambios'; 
+import { Tienda } from './components/tienda/Tienda'; 
+import { Login }  from './components/login/Login'; 
+import { Register }  from './components/register/Register';
+import { Err_404 }  from './components/error/Err_404'; 
 
 import { Admin } from './components/admin/Admin';
 import { User }  from './components/user/User';

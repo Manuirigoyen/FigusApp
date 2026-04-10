@@ -1,0 +1,17 @@
+.input-register {
+  height: 40px !important;
+  border-radius: 6px !important;
+}
+
+input.input-register,
+select.input-register {
+  width: 100%;
+}
+
+input[type="file"].input-register {
+  padding: 0.5rem 1rem;
+}
+
+.register-btn {
+  width: fit-content;
+}

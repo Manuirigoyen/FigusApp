@@ -242,3 +242,5 @@ const getPagoItem = (link: string, img: string, alt: string) => (
     </a>
   </div>
 );
+
+//validacion del form del footer que conecta con el backend

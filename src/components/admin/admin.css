@@ -50,8 +50,12 @@
   bottom: 10px;
 }
 
-#btn-album {
-  right: 55px;
+#btn-album{
+  right: 50px;
+}
+
+#btn-billetera {
+  left: 50px;
 }
 
 #btn-config {

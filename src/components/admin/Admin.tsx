@@ -1,5 +1,5 @@
 import './admin.css';
-
+import { Link } from 'react-router-dom';
 
 /**
  * Componente principal del panel de administración.
@@ -7,7 +7,7 @@ import './admin.css';
  */
 export const Admin = () => {
   return (
-    <main id="mainContent" className="main-wrapper position-relative d-flex">
+    <main id="mainContent" className="main-wrapper position-relative d-flex z-2">
       {getDivAside()}
 
       <div className="position-relative z-1 flex-grow-1">
@@ -32,13 +32,17 @@ const getDivAside = () => (
     <aside className="bg-white border-end px-3 py-3 pb-5 sidebar-width">
       <div className="profile-wrapper text-center mb-4">
         <div className="img-container">
-          <button id="btn-album" className="profile-icon">📓</button>
+          <Link to="/album">
+            <button id="btn-album" className="profile-icon">📓</button>
+          </Link>
           <img
             src="assets/img/db/users/fotoPerfilDefault.png"
             alt="Foto de perfil"
             className="rounded-circle mb-2"
           />
-          <button id="btn-billetera" className="profile-icon">💼</button>
+          <Link to="/billetera">
+            <button id="btn-billetera" className="profile-icon">💼</button>
+          </Link>
         </div>
         <h6>admin@example.com</h6>
         <button className="btn btn-danger btn-sm w-100">Cerrar sesión</button>

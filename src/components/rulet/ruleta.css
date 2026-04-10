@@ -90,23 +90,23 @@ main .btn-dark-custom:active {
 }
 
 .premios-circle .premio:nth-child(1) {
-  transform: rotate(170deg) translateY(-80px);
+  transform: rotate(175deg) translateY(-80px);
 }
 
 .premios-circle .premio:nth-child(2) {
-  transform: rotate(45deg) translateY(-90px);
+  transform: rotate(50deg) translateY(-90px);
 }
 
 .premios-circle .premio:nth-child(3) {
-  transform: rotate(85deg) translateY(-90px);
+  transform: rotate(90deg) translateY(-90px);
 }
 
 .premios-circle .premio:nth-child(4) {
-  transform: rotate(133deg) translateY(-90px);
+  transform: rotate(130deg) translateY(-90px);
 }
 
 .premios-circle .premio:nth-child(5) {
-  transform: rotate(-10deg) translateY(-90px);
+  transform: rotate(-3deg) translateY(-90px);
 }
 
 .premios-circle .premio:nth-child(6) {
@@ -114,11 +114,11 @@ main .btn-dark-custom:active {
 }
 
 .premios-circle .premio:nth-child(7) {
-  transform: rotate(276deg) translateY(-90px);
+  transform: rotate(270deg) translateY(-90px);
 }
 
 .premios-circle .premio:nth-child(8) {
-  transform: rotate(315deg) translateY(-90px);
+  transform: rotate(300deg) translateY(-90px);
 }
 
 main button {
@@ -168,8 +168,8 @@ main button:hover {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
 }
 
-.justify-content-center .btn {
-  width: 20% !important;
+.premio-ganado {
+  width: 120px;
 }
 
 @media (max-width: 360px) {

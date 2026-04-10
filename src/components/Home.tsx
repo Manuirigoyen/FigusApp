@@ -62,7 +62,7 @@ const getDivHeader = () => (
  * @param {string} link - URL destino del anuncio.
  * @returns Bloque de anuncio con imagen y enlace.
  */
-const getDivAnuncio = (imgPath: string, link: string) => (
+export const getDivAnuncio = (imgPath: string, link: string) => (
   <div className="ad-sidebar">
     <a href={link} target="_blank" rel="noopener noreferrer" className="d-block h-100">
       <div className="ad-unit p-3 text-center h-100 d-flex flex-column justify-content-start">
@@ -99,9 +99,9 @@ const getDivPresentacion = () => (
  * @returns Tres cards con ventajas principales de la aplicación.
  */
 const getDivPublicidad = () => (
-  <section className="beneficios-section text-center py-3 mt-4">
+  <section className="beneficios-section text-center py-3 mt-4 pb-4">
     <div className="container">
-      <h3 className="mb-5 text-white">
+      <h3 className="mb-4 text-white">
         ¿Por qué te conviene FigusApp?
       </h3>
 
