@@ -44,9 +44,9 @@ export const ALL_FIGURITAS: Figurita[] = [
   { id: 'figu10', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/LisandoMartinez.jpg' },
   { id: 'figu11', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/MarcosAcuña.jpg' },
   { id: 'figu12', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/pelotaArgentina.jpg' },
-  { id: 'figu13', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/hinchadaArgentina.jpg' },
+  { id: 'figu13', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/hinchadaArgentina.jpg' },  
   { id: 'figu14', teamId: 'argentina', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/copaMundo.jpg' },
-  { id: 'figu15', teamId: 'argentina', isSpecial: true, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/argentina/DiegoMaradona.jpg', specialImageUrl: '/assets/img/db/stickers/jugadorSorpresa.jpeg', specialImageAlt: 'Maradona', dataJugador: 'Maradona' },
+  { id: 'figu15', teamId: 'argentina', isSpecial: true, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/jugadorSorpresa.jpeg', specialImageUrl: '/assets/img/db/stickers/argentina/DiegoMaradona.jpg', specialImageAlt: 'Maradona', dataJugador: 'Maradona' },
   // Brasil
   { id: 'figu16', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/AlissonBecker.jpg' },
   { id: 'figu17', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/BrunoGuimarães.jpg' },
@@ -60,9 +60,9 @@ export const ALL_FIGURITAS: Figurita[] = [
   { id: 'figu25', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/Rodrygo.jpg' },
   { id: 'figu26', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/ViniciusJr.jpg' },
   { id: 'figu27', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/escudoBrasil.jpg' },
-  { id: 'figu28', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/hinchadaBrasil.jpg' },
+  { id: 'figu28', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/hinchadaBrasil.jpg' },   
   { id: 'figu29', teamId: 'brasil', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/copaMundo.jpg' },
-  { id: 'figu30', teamId: 'brasil', isSpecial: true, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/brasil/Pele.jpg', specialImageUrl: '/assets/img/db/stickers/jugadorSorpresa.jpeg', specialImageAlt: 'Pelé', dataJugador: 'Pele' },
+  { id: 'figu30', teamId: 'brasil', isSpecial: true, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/jugadorSorpresa.jpeg', specialImageUrl: '/assets/img/db/stickers/brasil/Pele.jpg', specialImageAlt: 'Pelé', dataJugador: 'Pele' },
   // Francia
   { id: 'figu31', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/AurélienTchouaméni.jpg' },
   { id: 'figu32', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/AxelDisasi.jpg' },
@@ -76,7 +76,7 @@ export const ALL_FIGURITAS: Figurita[] = [
   { id: 'figu40', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/Vitinha.jpg' },
   { id: 'figu41', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/YoussoufFofana.jpg' },
   { id: 'figu42', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/camisetaFrancia.jpg' },
-  { id: 'figu43', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/hinchadaFrancesa.jpg' },
+  { id: 'figu43', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/hinchadaFrancesa.jpg' },  
   { id: 'figu44', teamId: 'francia', isSpecial: false, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/copaMundo.jpg' },
-  { id: 'figu45', teamId: 'francia', isSpecial: true, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/francia/Zinedine Zidane.jpg', specialImageUrl: '/assets/img/db/stickers/jugadorSorpresa.jpeg', specialImageAlt: 'Zidane', dataJugador: 'Zidane' },
+  { id: 'figu45', teamId: 'francia', isSpecial: true, isComplete: false, backgroundImageUrl: '/assets/img/db/stickers/jugadorSorpresa.jpeg', specialImageUrl: '/assets/img/db/stickers/francia/Zinedine Zidane.jpg', specialImageAlt: 'Zidane', dataJugador: 'Zidane' },
 ];

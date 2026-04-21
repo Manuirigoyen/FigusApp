@@ -1,4 +1,4 @@
-// src/components/FiguritaCard.tsx
+// src/components/album/FiguritaCard.tsx
 // Componente que representa una figurita individual
 
 import React from 'react';
@@ -35,14 +35,12 @@ function FiguritaCard({ figurita, onFiguritaClick, clickable = true }: FiguritaC
   };
 
   let imageSrc = figurita.backgroundImageUrl;
-  let altText = figurita.isSpecial
-    ? figurita.specialImageAlt || `Figurita especial ${figurita.dataJugador}`
-    : `Figurita ${figurita.id} de ${figurita.teamId}`;
+  let altText = `Figurita ${figurita.id} de ${figurita.teamId}`;
 
-  // Mostrar la imagen de portada si es especial y no está completada
-  if (!figurita.isComplete && figurita.isSpecial && figurita.coverImageUrl) {
-    imageSrc = figurita.coverImageUrl;
-    altText = 'Figurita especial oculta';
+  // Si es especial y está completada, mostrar la imagen especial (foto real del jugador)
+  if (figurita.isComplete && figurita.isSpecial && figurita.specialImageUrl) {
+    imageSrc = figurita.specialImageUrl;
+    altText = figurita.specialImageAlt || `Figurita especial ${figurita.dataJugador}`;
   }
 
   return (

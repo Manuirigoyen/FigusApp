@@ -32,9 +32,10 @@
 
 .main-content {
   background-image: url("../assets/img/fonts/fondoEstadioDesktop.png");
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  position: relative;
+  background-size: cover;        
+  background-repeat: no-repeat;  
+  background-position: center;   
+  background-attachment: fixed;
 }
 
 .main-content::before {
@@ -44,7 +45,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2) !important;
   pointer-events: none;
   z-index: 1;
 }
@@ -55,6 +55,10 @@
 
 .navbar-brand-hover:hover {
   transform: scale(1.05);
+}
+
+main {
+  padding-bottom: 1rem;
 }
 
 .navbar-brand {
@@ -254,7 +258,7 @@ main .col-lg-4 .fw-bold {
   border-radius: 0.5rem;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 991.98px) {
 
   #footer .col-md-6,
   #footer .col-md-12,

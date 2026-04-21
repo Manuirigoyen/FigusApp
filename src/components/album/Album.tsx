@@ -169,12 +169,6 @@ function Album() {
           <h2>FELICIDADES!!</h2>
           <h3>Completaste el álbum!</h3>
           <a href="#" className="boton-viaje">CLICK <br />AQUÍ</a>
-          <svg className="svg-curvo" viewBox="0 0 400 200">
-            <path id="curva" d="M10 10 Q 95 45 180 10 T 350 10" />
-            <text>
-              <textPath href="#curva" startOffset="0%">PARA ELEGIR SU VIAJE</textPath>
-            </text>
-          </svg>
         </div>
       </div>
     </div>

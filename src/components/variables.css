@@ -36,7 +36,7 @@
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-xl: 0 4px 8px rgba(0, 0, 0, 0.8);
-  --shadow-glow: 0 0 15px rgba(255, 193, 7, 0.8);
+  --shadow-glow: 0 0 15px rgba(0, 0, 0, 0.8);
   
   /* Bordes */
   --border-color-grey: #ccc;

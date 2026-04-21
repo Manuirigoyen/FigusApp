@@ -1,4 +1,4 @@
-// src/components/Billetera.tsx
+// src/components/billetera/Billetera.tsx
 // Componente que muestra las figuritas repetidas del usuario
 
 import React, { useState, useEffect, useReducer } from 'react';
@@ -72,6 +72,9 @@ const Billetera: React.FC = () => {
   // Lo inicializamos con lo que cargamos del localStorage.
   const [billetera, dispatch] = useReducer(billeteraReducerWithLogging, storedBilletera);
 
+  // Leemos qué figuritas ya están completas/pegadas en el álbum
+  const [figuritasCompletas] = useLocalStorage<string[]>(STORAGE_KEYS.FIGURITAS_COMPLETAS, []);
+
   // Este efecto es como el guardado automático del juego.
   // Cada vez que la `billetera` (el estado del reducer) cambia, lo guarda en `localStorage`.
   useEffect(() => {
@@ -125,11 +128,8 @@ const Billetera: React.FC = () => {
 
             // Preparamos la figurita para mostrarla en la billetera
             const figuritaParaBilletera: Figurita = {
-           ...originalFigurita,
-              isComplete: true, // Siempre se muestra como "completa" en la billetera
-              backgroundImageUrl: originalFigurita.isSpecial && originalFigurita.specialImageUrl
-                             ? originalFigurita.specialImageUrl
-                                : originalFigurita.backgroundImageUrl,
+              ...originalFigurita,
+              isComplete: figuritasCompletas.includes(figuritaId), // Solo complete si ya la pegó
             };
 
             return (
